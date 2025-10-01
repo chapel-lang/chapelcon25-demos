@@ -28,7 +28,7 @@ writeln(colSums);
 
 
 // Task 3: Create a 1D array that contains the pairwise product 
-//   of the arrays your created in Task 3. Do this without a loop.
+//   of the arrays your created in Task 2. Do this without a loop.
 //   Print the resulting array.
 var product: [1..n] int = rowSums * colSums;
 writeln(product);
