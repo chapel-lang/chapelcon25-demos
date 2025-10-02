@@ -2,9 +2,9 @@
 // in conjunction with domains/arrays
 use CyclicDist;
 use BlockDist;
+
+
 // 1. Locale queries on array elements
-
-
 config const n = 8;
 
 const Space1 = {1..n, 1..n};
