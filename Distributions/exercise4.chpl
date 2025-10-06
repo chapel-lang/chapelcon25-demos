@@ -2,15 +2,17 @@
 //  computations. The BlockDist code is below, including the code necessary to time the 
 //  stencil computation. Try out using a StencilDist instead and compare the performance.
 
-use Time;
+// Remember, compile with `--fast` for the best performance!
 
-const config gridSize = 1000;
+use Time, BlockDist, StencilDist, Random;
+
+config const gridSize = 1000;
 var gridShape = {1..gridSize,1..gridSize};
 var blockDistGrid = new blockDist(boundingBox=gridShape);
 var gridDomain = blockDistGrid.createDomain(gridShape);
 
-var srcArray [gridDomain] real;
-var dstArray [gridDomain] real;
+var srcArray: [gridDomain] real;
+var dstArray: [gridDomain] real;
 
 // Initializing
 fillRandom(srcArray);
