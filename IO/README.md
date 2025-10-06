@@ -14,3 +14,7 @@ Third exercise:
 Fourth exercise:
   Use readf to read the first line into parts of speech
   Use writef to replace the "count" with a number
+
+Fifth exercise:
+  Use mark, commit and revert to find the bad animal noise
+  Print the line containing it
