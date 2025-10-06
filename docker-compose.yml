@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  chapel:
+    image: chapel/chapel:2.6.0
+    container_name: chapel_tutorial
+    volumes:
+      - .:/workspace   # Map local . to /workspace in container
+    working_dir: /workspace
+    tty: true
+    stdin_open: true
