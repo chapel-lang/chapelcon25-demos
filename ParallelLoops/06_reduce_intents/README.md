@@ -15,6 +15,7 @@ When a `forall` loop modifies an outer variable with `ref`, multiple tasks can r
 
 ## 🐱 Cat Example: Total Name Length
 
+[sum_reduce.chpl](./sum_reduce.chpl)
 ```chpl
 const cats = ["Amber", "Winter", "Betty", "Goldie", "Colitas", "Alfredo", "CatGPT"];
 var totalLength = 0;
@@ -22,16 +23,42 @@ var totalLength = 0;
 forall catName in cats
   with (+ reduce totalLength)
 {
-  totalLength reduce= catName.size; // Each task safely accumulates into its shadow
+  totalLength += catName.size; // Each task safely accumulates into its shadow
 }
 
 writeln("Total kitty energy (name lengths): ", totalLength);
-// Expected: 41
+// Expected: 42
 ```
 
+### `reduce=`
+
+We technically have a duplication of the operation we
+are doing here.
+`totalLength += catName.size` specifies `+` as the reduction again.
+
+
+We can replace `+=` with `reduce=` in the body of the loop
+in order to eliminate the need to specify the reduction
+operator twice.
+`totalLength reduce= catName.size`
+
+> [!NOTE]
+> `reduce=` is how promoted reductions in Chapel are implemented
+>
+> Ex:
+> If you write `+ reduce bla`
+>
+> ```chpl
+> var accTmp: bla.eltType;
+> [b in bla] with (+ reduce accTmp) {
+>   accTmp reduce= b;
+> }
+> // accTmp now contains the result of `+ reduce bla`
+> ```
 
 ## 🐱 Cat Example: Max Name Length
 
+[max_reduce.chpl](./max_reduce.chpl)
 ```chpl
 const cats = ["Amber", "Winter", "Betty", "Goldie", "Colitas", "Alfredo", "CatGPT"];
 var maxLength = 0;
