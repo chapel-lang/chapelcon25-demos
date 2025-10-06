@@ -1,4 +1,4 @@
-This repository contains files relevant to the ChapelCon '25 Tutorial Day Demos. 
+This repository contains files relevant to the ChapelCon '25 Tutorial Day Demos.
 The schedule for Tutorial Days are below, all times are PST.
 
 ## October 7: Tutorials, Day 1
