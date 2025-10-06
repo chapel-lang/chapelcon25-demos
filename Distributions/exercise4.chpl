@@ -27,4 +27,4 @@ for t in 1..20 {
   dstArray <=> srcArray; // swap the arrays for the next iteration
 }
 s.stop();
-writeln("20 stencil iterations took ", s.elapsed(), " seconds");
+writeln("20 iterations took ", s.elapsed(), " seconds");
