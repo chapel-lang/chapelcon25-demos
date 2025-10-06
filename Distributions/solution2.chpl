@@ -38,6 +38,7 @@ startCommDiagnostics();
 C = A + B;
 
 stopCommDiagnostics();
-writeln("\n\n");writeln(getCommDiagnostics());
+writeln("\n\n");
+writeln(getCommDiagnostics());
 
 

@@ -29,4 +29,5 @@ for t in 1..20 {
   dstArray <=> srcArray; // swap the arrays for the next iteration
 }
 s.stop();
+writeln(+ reduce dstArray);
 writeln("20 iterations took ", s.elapsed(), " seconds");
