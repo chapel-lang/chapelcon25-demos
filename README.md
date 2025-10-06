@@ -21,4 +21,46 @@ The schedule for Tutorial Days are below, all times are PST.
 * 11:00 - 13:20 – Free-Code Session
 * 13:20 - 14:00 – Parallel Iterators Demo/Exercise Session
 
+## Running Chapel Programs
+
+### Using Docker (Recommended)
+
+This repository includes a Docker Compose setup that provides a Chapel environment without requiring a local Chapel installation.
+
+**Note:** Make sure you are in the top-level directory of this repository (where `docker-compose.yml` is located) before running these commands.
+
+To run Chapel programs using Docker:
+
+```bash
+# Start an interactive Chapel session
+docker compose run --rm chapel
+
+# Compile and run a specific Chapel program
+docker compose run --rm chapel chpl -o program_name source_file.chpl
+docker compose run --rm chapel ./program_name
+
+# Compile and run in one command
+docker compose run --rm chapel chpl --fast source_file.chpl && ./source_file
+```
+
+The Docker container maps your current directory to `/workspace`, so all files in this repository are accessible within the container.
+
+### Local Chapel Installation
+
+If you have Chapel installed locally, you can run programs directly:
+
+```bash
+# Compile a Chapel program
+chpl -o program_name source_file.chpl
+
+# Run the compiled program
+./program_name
+
+# Compile and run with optimizations
+chpl --fast -o program_name source_file.chpl
+./program_name
+```
+
+For more information about Chapel compilation options, see the [Chapel documentation](https://chapel-lang.org/docs/).
+
 You can find code and exercises for each session within the relevant subdirectories.
