@@ -48,8 +48,38 @@ proc computeWithBlockDist() {
 }
 
 
+use StencilDist;
+
 proc computeWithStencilDist() {
-  // Start by copying in the contents of the other function. Then make the 3 changes
+  // Create the block distributed domain
+  var gridShape = {1..gridSize,1..gridSize};
+  var stencilDistribution = new stencilDist(boundingBox=gridShape, fluff=(1,1));
+  var gridDomain = stencilDistribution.createDomain(gridShape);
+  
+  // Create and initialize the two arrays for the computation
+  var srcArray: [gridDomain] real;
+  var dstArray: [gridDomain] real;
+  fillRandom(srcArray);
+  dstArray = 0.0;
+
+  // Define the interior grid for the computation
+  var innerGrid = gridDomain.expand((-1,-1));
+
+  // Start a stopwatch to time the computation
+  var s: stopwatch;
+  s.restart();
+
+  for t in 1..20 {
+    forall (i,j) in innerGrid {
+      dstArray[i,j] = 0.2 * (srcArray[i-1,j] + srcArray[i, j-1] + srcArray[i,j] + srcArray[i,j+1] + srcArray[i+1,j]);
+    }
+    dstArray <=> srcArray; // swap the arrays for the next iteration
+    srcArray.updateFluff();
+  }
+
+  s.stop();
+  writeln(+ reduce dstArray); // Print to make sure the compiler doesn't optimize away the computation
+  writeln("20 iterations using a StencilDist took ", s.elapsed(), " seconds");
 }
 
 
