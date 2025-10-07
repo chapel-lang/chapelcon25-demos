@@ -61,7 +61,7 @@ to be explicit about how the two are connected. The argument to the follower
 _must_ be called `followThis` (it's passed by name). The leader can yield whatever
 it wants (me using `followThis` is just a convention).
 
-* ** (Exercise 7)** Modify the `ex7.chpl` file to `zip` two calls to `count`
+* **(Exercise 7)** Modify the `ex7.chpl` file to `zip` two calls to `count`
   and iterate over them in parallel using a `forall` loop. Use different arguments
   to count: `1` and `10`, then `11` and `20`. What do you see printed?
   What should've been printed?
@@ -101,7 +101,7 @@ iter count(start: int, end: int, followThis, param tag) where tag == iterKind.fo
 }
 ```
 
-** (Exercise 8)** Modify the `ex8.chpl` file to `zip` a call to `count`
-   with a new array of integers with 10 elements to make sure it works.
+* **(Exercise 8)** Modify the `ex8.chpl` file to `zip` a call to `count`
+  with a new array of integers with 10 elements to make sure it works.
 
-   Make the array have 20 elements. What happens?
+  Make the array have 20 elements. What happens?

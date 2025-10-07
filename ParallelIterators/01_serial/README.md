@@ -66,7 +66,7 @@ a _parallel_ iterator.
    You can use a `for` loop to do this instead of writing out each
    `yield` statement.
 
-*  ** (Exercise 2)** Consider the following program. What do you expect to happen?
+*  **(Exercise 2)** Consider the following program. What do you expect to happen?
    What happens when you compile and run it?
 
    ```Chapel
