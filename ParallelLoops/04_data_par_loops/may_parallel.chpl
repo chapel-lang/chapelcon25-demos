@@ -1,4 +1,4 @@
-const cats = ["Amber", "Winter", "Betty", "Goldie", "Colitas", "Alfredo", "CatGPT"];
+const cats: [1..11] string = ["Amber", "Winter", "Betty", "Goldie", "Colitas", "Alfredo", "CatGPT", "Ziggy", "Travy", "Cadence", "Teddy"];
 
 // May-Parallel Loop (Expression form)
 // If the array 'cats' provides a parallel iterator (which standard arrays do),

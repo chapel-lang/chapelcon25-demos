@@ -3,9 +3,11 @@ const cats: [1..n] string = ["Amber", "Winter", "Betty", "Goldie", "Colitas", "A
 
 // A mutable array representing how long each cat has been awake (in hours)
 var awakeHours: [1..n] int = [3, 5, 2, 7, 1, 4, 6, 5, 6, 2, 4];
-var zeroes: [1..n] int = 0;
 
-// Use promotion to apply max element-wise
-awakeHours = max(awakeHours - 2, zeroes);
+// Each cat will nap for 2 hours, in parallel
+forall i in 1..n
+{
+  awakeHours[i] = max(0, awakeHours[i] - 2);
+}
 
 writeln("Updated awake hours: ", awakeHours);

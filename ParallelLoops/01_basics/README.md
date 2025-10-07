@@ -4,9 +4,9 @@
 Before our cats go parallel, we recall that Chapel supports standard `for` loops just like any other language:
 
 ```chpl
-const cats = ["Winter", "Betty", "Goldie", "Colitas"]
+const cats = ["Amber", "Winter", "Betty", "Goldie", "Colitas"];
 
-for i in 0..3 do writeln(cats[i]);
+for i in 0..4 do writeln(cats[i]);
 ```
 
 The `for` loop invokes a serial iterator for the object being iterated over.
@@ -18,7 +18,7 @@ Chapel also supports zippered iteration:
 
 
 ```chpl
-for (i, cat) in zip(0..3, cats) {
+for (i, cat) in zip(0..4, cats) {
   writeln("Meow from cat ", i, ": ", cat);
 }
 ```

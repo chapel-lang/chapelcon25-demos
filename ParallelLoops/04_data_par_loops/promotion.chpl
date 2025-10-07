@@ -11,8 +11,8 @@ const catAges = [1, 4, 2, 3, 5, 4, 6]; // Example ages
 // Chapel automatically promotes the function over the array.
 var factorArray = purrFactor(catAges);
 
-// This is equivalent to the explicit forall loop:
-// var factorArray = forall age in catAges do purrFactor(age);
+// This is equivalent to the may-parallel loop:
+// var factorArray = [age in catAges] purrFactor(age);
 
 writeln("Cat Ages: ", catAges);
 writeln("Purr Factors (promoted): ", factorArray);

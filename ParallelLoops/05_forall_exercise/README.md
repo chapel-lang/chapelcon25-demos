@@ -9,3 +9,7 @@ in parallel.
 Now let’s promote the idea — instead of looping manually, make the operation implicit.
 
 Try rewriting the above using promotion, so the entire array updates in one line.
+
+> [!TIP]
+> You may need to create an array of zeroes in order to make the the
+> arguments of the promoted expression are of the same shape.
