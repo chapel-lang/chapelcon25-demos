@@ -1,0 +1,23 @@
+{
+  "image": "chapel/chapel-gasnet:2.6.0",
+  "containerEnv": {
+    "CHPL_COMM": "none",
+  },
+  "features": {
+  },
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "hello.chpl"
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "chpl-hpe.chapel-vscode"
+      ],
+      "settings": {
+        "chapel.CHPL_HOME": "/opt/chapel",
+      }
+    }
+  }
+}
