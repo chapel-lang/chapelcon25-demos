@@ -23,7 +23,7 @@ forall (i,j) in D {
 var C: [D] complex;
 C = cos(A) + sin(A) * 1i;
 
-writeln("After scalar assignment, does C == B? ", && C.equals(B));
+writeln("After scalar assignment, does C == B? ", C.equals(B));
 
 
 // 3. Parallel reductions
