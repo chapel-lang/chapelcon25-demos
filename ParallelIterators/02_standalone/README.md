@@ -103,8 +103,10 @@ for each. Then, within each task, we can iterate over the chunk and yield
 the integers in that chunk.
 
 ```Chapel
+use RangeChunk;
 iter count(start: int, end: int, param tag) where tag == iterKind.standalone {
   coforall rng in chunks(start..end, here.maxTaskPar) {
+    //            ^^^^^^ from the RangeChunk module
     for i in rng {
       yield i;
     }

@@ -2,7 +2,7 @@
 ## What is an iterator?
 
 An _iterator_ is a sort of subroutine that generates, or _yields_, multiple
-values. This can be sone serially or in parallel.
+values. This can be done serially or in parallel.
 
 ```Chapel
 iter myIter() {
@@ -51,7 +51,7 @@ for i in myThree {
 ## Limitations of serial iterators
 So far, the iterators we've seen have been _serial_ iterators. They can
 only be used as part of serial 'for' loops (or bracket loops, which fall
-back to serial iteration). Thus, the following code will not work:
+back to serial iteration). Thus, the following code will not compile:
 
 ```Chapel
 forall i in myThree {}
@@ -64,10 +64,10 @@ a _parallel_ iterator.
 
 *  **(Exercise 1)** Re-write `myIter` to yield the first 10 integers, starting at 0.
    You can use a `for` loop to do this instead of writing out each
-   `yield` statement.
+   `yield` statement. (This is `ex1.chpl`)
 
 *  **(Exercise 2)** Consider the following program. What do you expect to happen?
-   What happens when you compile and run it?
+   What happens when you compile and run it? (This is `ex2.chpl`)
 
    ```Chapel
    iter myIter() {
